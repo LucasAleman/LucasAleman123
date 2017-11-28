@@ -1,0 +1,59 @@
+{% extends "bootstrap/base.html" %}
+{% block head %}
+{{ super() }}
+
+
+
+{% endblock %}
+{% block title %}HOME{{ nombre }}{% endblock %}
+{% block navbar %}
+
+<div class="navbar navbar-inverse bg-inverse mi-nav" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Bienvenido!</a>
+        </div>
+<!--El siguiente if es para poder realizar la validacion de los menus a partir del usuario -->
+    {% if username %}
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/basededatos">Base de Datos</a></li>
+                <li><a href="/cliente">Cliente</a></li>
+                <li><a href="/producto">Cantidad por Producto</a></li>
+                <li><a href="/cantidad">Stock por cliente
+ </a></li>
+                <li><a href="/precio">Precio por cliente</a></li>
+                <li><a href="/Ventas"> Ultimas Ventas</a></li>
+                <li><a href="/signoff">Salir</a></li>
+                                   
+            </ul>
+        </div>
+    {% else %}
+       <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">                
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Registrarse</a></li>
+            </ul>
+        </div>
+    {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% block page_content %}{% endblock %}
+</div>
+
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+{{ moment.include_moment() }}
+{{ moment.lang('es') }}
+{% endblock %}
