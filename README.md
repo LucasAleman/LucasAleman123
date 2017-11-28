@@ -45,3 +45,4 @@ Poseen validators como lo son el largo de caracteres requerido (minimo y maximo)
 Además de poseer validators decidimos poner la restricción de expresiones regulares __(Regexp)__.
 Para la validación de usuarios con la clase **Checkeo_Log** y la creación de nuevos Usuarios como lo es la clase **CreaUsuario**. 
 Todas poseen el DataRequired para solicitar si o si valores en esos campos y también destacamos el EqualTo a la hora de comparar contraseñas para la creación de nuevas credenciales de acesso. Todas estas propias de “wtforms.validators”.
+# Parcial-paradigmas
